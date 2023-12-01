@@ -3,7 +3,7 @@ import Home from "./pages/home";
 
 const App = () => {
   const client = new ApolloClient({
-    uri: "http://localhost:5000/graphql",
+    uri: "https://event-management-backend-lime.vercel.app/graphql",
     cache: new InMemoryCache(),
   });
 
