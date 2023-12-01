@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useMutation , useApolloClient } from "@apollo/client";
+import { useMutation, useApolloClient } from "@apollo/client";
 import { MdClose } from "react-icons/md";
 import { CREATE_EVENT } from "../graphql/mutations";
 import { TFormState } from "../models";
@@ -12,9 +12,9 @@ interface IFormModal {
 }
 
 const FormModal = ({ isVisible, onClose }: IFormModal) => {
-    const client = useApolloClient();
-    
-    const [formState, setFormState] = useState<TFormState>({
+  const client = useApolloClient();
+
+  const [formState, setFormState] = useState<TFormState>({
     name: "",
     date: "",
     time: "",
@@ -96,7 +96,10 @@ const FormModal = ({ isVisible, onClose }: IFormModal) => {
         {/* HEADER */}
         <div className="w-full flex flex-row items-center justify-between">
           <h1 className="text-lg font-semibold text-black/90">Create Event</h1>
-          <div className="flex bg-gray-200/70 h-6 w-6 justify-center items-center rounded-md" onClick={onClose}>
+          <div
+            className="flex bg-gray-200/70 h-6 w-6 justify-center items-center rounded-md"
+            onClick={onClose}
+          >
             <MdClose className="h-5 w-5 text-black/60 cursor-pointer" />
           </div>
         </div>
@@ -181,7 +184,8 @@ const FormModal = ({ isVisible, onClose }: IFormModal) => {
               <input
                 type="text"
                 name="guest"
-                className="w-full p-1"
+                className="bg-gray-200/80 w-full p-2 placeholder:text-black/40 text-black/80
+                text-sm font-normal rounded-md"
                 value={formState.guest}
                 onChange={handleFormState}
                 placeholder="Add guests here"
