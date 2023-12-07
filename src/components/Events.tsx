@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { CircularProgress, Alert, AlertTitle } from '@mui/material';
+import { CircularProgress, Alert, AlertTitle, Box } from '@mui/material';
 import { GET_ALL_EVENTS } from '../graphql/queries';
 import { Event as IEventType } from '../types';
 import Event from './Event';
@@ -9,10 +9,9 @@ const Events = () => {
 
   if (loading) {
     return (
-      <CircularProgress />
-      // <div className="p-4 flex justify-center items-center">
-      //   <span className="text-sm font-normal text-black/70">Loading...</span>
-      // </div>
+      <Box sx={{ display: "flex", p: 4, justifyContent: "center", alignItems: "center" }}>
+        <CircularProgress />
+      </Box>
     );
   }
 
