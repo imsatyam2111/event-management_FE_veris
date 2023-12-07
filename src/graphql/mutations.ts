@@ -7,6 +7,7 @@ export const CREATE_EVENT = gql`
         $time: String!
         $duration: String!
         $description: String!
+        $location: String!
         $guests: [String]!
     ) {
         createEvent(
@@ -15,6 +16,7 @@ export const CREATE_EVENT = gql`
             time: $time
             duration: $duration
             description: $description
+            location: $location
             guests: $guests
         ) {
             successful

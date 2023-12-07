@@ -9,6 +9,7 @@ export const GET_ALL_EVENTS = gql`
             time
             guests
             duration
+            location
             description
         }
     }

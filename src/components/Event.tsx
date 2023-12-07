@@ -1,40 +1,42 @@
-import { BsCalendarDate } from "react-icons/bs";
-import { MdAccessTime } from "react-icons/md";
-import { Event as EventType } from "../models";
+import { Paper, Stack, Typography, Chip } from '@mui/material';
+import { Event as EventIcon, AccessTime, Place } from '@mui/icons-material';
+import { Event as IEventType } from '../types';
 
-const Event = (props: EventType) => {
+const Event = (props: IEventType) => {
+  const { name, description, guests, location, date, time, duration } = props;
+
   return (
-    <div className="flex flex-col space-y-3 bg-gray-100 rounded-md p-4">
-      <h1 className="text-lg font-semibold text-black/80">{props?.name}</h1>
-      <p className="text-sm font-normal text-black/70">{props?.description}</p>
-      <div className="flex flex-row items-center justify-between">
-        <div className="flex flex-row items-center space-x-1">
-          <BsCalendarDate className="h-4 w-4 text-gray-500" />
-          <span className="text-sm font-normal text-gray-600">
-            {props?.date}
-          </span>
-        </div>
-        <div className="flex flex-row items-center space-x-1">
-          <MdAccessTime className="h-4 w-4 text-gray-500" />
-          <span className="text-sm font-normal text-gray-600">
-            {props?.time}
-          </span>
-        </div>
-      </div>
-      <span className="text-sm font-normal text-gray-600">
-        Event duration: {Math.floor(Number(props?.duration) / 60)} hrs
-      </span>
-      <div className="flex flex-row items-center space-x-2">
-        {props?.guests?.map((guest, i) => (
-          <div
-            key={i.toString() + "-" + guest}
-            className="flex items-center rounded-full bg-gray-200 px-2 py-1"
-          >
-            <span className="text-sm font-normal text-gray-600">{guest}</span>
-          </div>
-        ))}
-      </div>
-    </div>
+    <Paper sx={{ backgroundColor: '#F2F2F2', p: 2 }}>
+      <Stack gap={1.5} sx={{ color: '#6E6D6D' }}>
+        <Typography sx={{ fontSize: 24, color: '#080707' }}>{name}</Typography>
+        <Typography variant="body2">{description}</Typography>
+        <Stack direction="row" gap={2}>
+          <Stack direction="row" alignItems="center" justifyContent="center" gap={1}>
+            <EventIcon fontSize="small" />
+            <Typography variant="subtitle2">{date}</Typography>
+          </Stack>
+          <Stack direction="row" alignItems="center" gap={1}>
+            <AccessTime fontSize="small" />
+            <Typography variant="subtitle2">{time}</Typography>
+          </Stack>
+        </Stack>
+        <Stack direction="row" gap={2}>
+          <Stack direction="row" alignItems="center" gap={1}>
+            <Place sx={{ ml: -0.3 }} />
+            <Typography variant="body2" component="span">
+              {location}
+            </Typography>
+          </Stack>
+          <Typography variant="body2">Duration: {duration}</Typography>
+        </Stack>
+        <Typography>Attendees:</Typography>
+        <Stack direction="row" gap={2} sx={{ flexWrap: 'wrap' }}>
+          {guests.map((guest, index) => (
+            <Chip key={index} label={guest} variant="outlined" />
+          ))}
+        </Stack>
+      </Stack>
+    </Paper>
   );
 };
 
