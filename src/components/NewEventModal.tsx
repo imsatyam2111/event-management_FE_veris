@@ -10,6 +10,7 @@ import {
   Chip,
   Stack,
   Typography,
+  Grid,
   IconButton,
 } from '@mui/material';
 import { Add, Close } from '@mui/icons-material';
@@ -119,7 +120,7 @@ const NewEventModal = (props: INewEventModal) => {
         </Stack>
       </DialogTitle>
       <DialogContent sx={{ my: 2 }}>
-        <Box component="form" noValidate autoComplete="off" sx={{ width: '100%', p: 2, pb: 0 }}>
+        <Box component="form" noValidate autoComplete="off" sx={{ p: 2, pb: 0 }}>
           <Stack spacing={2}>
             <TextField
               size="small"
@@ -137,8 +138,8 @@ const NewEventModal = (props: INewEventModal) => {
               fullWidth
               onChange={handleInputChange}
             />
-            {/* <Grid container spacing={1}>
-              <Grid item xs={6} sm={4}>
+            {/* <Grid container gap={2}>
+              <Grid item xs={12} sm={4}>
                 <TextField
                   fullWidth
                   size="small"
@@ -150,7 +151,7 @@ const NewEventModal = (props: INewEventModal) => {
                   onChange={handleInputChange}
                 />
               </Grid>
-              <Grid item xs={6} sm={4}>
+              <Grid item xs={12} sm={4}>
                 <TextField
                   fullWidth
                   size="small"
