@@ -6,7 +6,7 @@ const Event = (props: IEventType) => {
   const { name, description, guests, location, date, time, duration } = props;
 
   return (
-    <Paper sx={{ backgroundColor: '#F2F2F2', p: 2 }}>
+    <Paper sx={{ backgroundColor: '#F2F2F2', p: 2, my: 2 }}>
       <Stack gap={1.5} sx={{ color: '#6E6D6D' }}>
         <Typography sx={{ fontSize: 24, color: '#080707' }}>{name}</Typography>
         <Typography variant="body2">{description}</Typography>

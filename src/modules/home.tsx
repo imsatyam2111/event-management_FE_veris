@@ -19,7 +19,7 @@ function Home() {
       <Box sx={{ p: { xs: 2, sm: '24px 20%'} }}>
         <Stack direction="row" justifyContent="space-between" sx={{ mb: 4 }}>
           <Typography variant="h4">My Events</Typography>
-          <Button variant="contained" startIcon={<Add />} onClick={openNewEventModal}>
+          <Button variant="contained" startIcon={<Add />} sx={{ backgroundColor: '#0766AD' }} onClick={openNewEventModal}>
             New Event
           </Button>
         </Stack>

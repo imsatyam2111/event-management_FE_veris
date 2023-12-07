@@ -193,7 +193,7 @@ const NewEventModal = (props: INewEventModal) => {
                 fullWidth
                 sx={{ flex: 1 }}
               />
-              <Button variant="contained" color="secondary" onClick={handleAddGuest} startIcon={<Add />}>
+              <Button variant="outlined" onClick={handleAddGuest} startIcon={<Add />}>
                 Add
               </Button>
             </Box>
@@ -206,7 +206,7 @@ const NewEventModal = (props: INewEventModal) => {
         </Box>
       </DialogContent>
       <DialogActions>
-        <Button variant="contained" onClick={handleSubmit}>
+        <Button variant="contained" sx={{ backgroundColor: '#0766AD' }} onClick={handleSubmit}>
           Create Event
         </Button>
       </DialogActions>

@@ -25,11 +25,11 @@ const Events = () => {
   }
 
   return (
-    <div className="flex flex-col space-y-4 px-2 py-4">
+    <Box>
       {data?.getAllEvents?.map((event: IEventType) => (
         <Event key={event.id} {...event} />
       ))}
-    </div>
+    </Box>
   );
 };
 
