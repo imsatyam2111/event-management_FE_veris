@@ -10,7 +10,6 @@ import {
   Chip,
   Stack,
   Typography,
-  Grid,
   IconButton,
 } from '@mui/material';
 import { Add, Close } from '@mui/icons-material';
@@ -138,44 +137,6 @@ const NewEventModal = (props: INewEventModal) => {
               fullWidth
               onChange={handleInputChange}
             />
-            {/* <Grid container gap={2}>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  fullWidth
-                  size="small"
-                  name="date"
-                  label="Date"
-                  type="date"
-                  InputLabelProps={{ shrink: true }}
-                  // sx={{ flex: 1 }}
-                  onChange={handleInputChange}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  fullWidth
-                  size="small"
-                  name="time"
-                  label="Time"
-                  type="time"
-                  InputLabelProps={{ shrink: true }}
-                  // sx={{ flex: 1 }}
-                  onChange={handleInputChange}
-                />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <TextField
-                  fullWidth
-                  size="small"
-                  name="duration"
-                  label="Duration"
-                  placeholder="1h 30m"
-                  variant="outlined"
-                  // sx={{ flex: 1 }}
-                  onChange={handleInputChange}
-                />
-              </Grid>
-            </Grid> */}
 
             <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2 }}>
               <Box sx={{ flex: 1 }}>
